@@ -1,0 +1,51 @@
+@font-face{ 
+    font-family: valfont; 
+    src: url(fonts/Valorant\ Font.ttf) format("truetype"); 
+} 
+body {
+    background-color: #232325;
+    color: white;
+    text-align: center;
+    font-family: valfont;
+}
+#table-striped {
+    font-family: valfont;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#table-striped td, #table-striped th {
+    border: 1px solid rgba(221, 221, 221, 0.219);
+    padding: 8px;
+}
+
+#table-striped tr:nth-child(even){
+    background-color: #232325;
+    text-align: center;
+    color: white;
+    font-family: valfont;
+}
+
+
+#table-striped th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #53212B;
+    color:white;
+    font-family: valfont;
+}
+input, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgba(221, 221, 221, 0.219);;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color:#232325;
+    color: white
+}
+input {
+    font-family: valfont;
+}
