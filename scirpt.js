@@ -2,7 +2,7 @@
 
 
 
-const api_url = 'https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/a16955a5-4ad0-f761-5e9e-389df1c892fb?size=100&startIndex=0&api_key=RGAPI-8e4244c4-7cb7-4353-bf08-920e93da36c3'
+const api_url = 'https://na.api.riotgames.com/val/ranked/v1/leaderboards/by-act/a16955a5-4ad0-f761-5e9e-389df1c892fb?size=100&startIndex=0&api_key=RGAPI-6ee17f05-4fc5-459b-96c1-705c55430477'
 async function getStats() {
     const response = await fetch(api_url);
     const data = await response.json();
