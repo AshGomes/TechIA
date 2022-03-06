@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>VALORANT TRACKER</title>
+    <!--<style>
+        table {
+	display: table;
+}
+table tr {
+	display: table-cell;
+}
+table tr td {
+	display: block;
+}
+    </style> -->
+</head>
+
+
+<body>
+    <h1>Personal Valorant Tracker</h1>
+    <button onclick="document.location='tracker.html'">Go Back to Menu</button>
+
+
+    <p><input type="text" id="date"> Date (MM/DD/YY)</p>
+    <p><input type="text" id="map"> Map</p>
+    <p><input type="text" id="rank"> Rank</p>
+    <p><input type="text" id="rrchange"> RR Change (+-x)</p>
+    <p><input type="text" id="score"> Score</p>
+    <p><input type="text" id="kills"> Kills</p>
+    <p><input type="text" id="deaths"> Deaths</p>
+
+    <p>
+        <button type="button" id="enterGame" onclick="enterGame()">Enter Game</button> <br>
+        <button type="button" id="displayGame" onclick="displayGame()">Display Game</button>
+    </p>
+
+    <table id="table-striped">
+        <tr id="dateColumn">
+            <th>Date</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="mapColumn">
+            <th>Map</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="rankColumn">
+            <th>Rank</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="rrChangeColumn">
+            <th>RR Change</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="scoreColumn">
+            <th>Score</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="killsColumn">
+            <th>Kills</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr id="deathsColumn">
+            <th>Deaths</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+        <script>
+            var games = [];
+            function playerGame(d,m,r,c,s,k,d){
+                this.date = d;
+                this.map = m;
+                this.rank = r;
+                this.rrchange = c;
+                this.score = s;
+                this.kills = k;
+                this.deaths = d;
+                }
+            
+            
+            function enterGame() {
+                var d = document.getElementById("date").value;
+                document.getElementById("date").value = "";
+                var m = Number(document.getElementById("map").value);
+                document.getElementById("map").value = "";
+                var r = Number(document.getElementById("rank").value);
+                document.getElementById("rank").value = "";
+                var c = Number(document.getElementById("rrchange").value);
+                document.getElementById("rrchange").value = "";
+                var s = Number(document.getElementById("score").value);
+                document.getElementById("score").value = "";
+                var k = Number(document.getElementById("kills").value);
+                document.getElementById("kills").value = "";
+                var d = Number(document.getElementById("deaths").value);
+                document.getElementById("deaths").value = "";
+                var game = new playerGame(d, m, r, c, s, k, d);
+                games.push(game);
+
+    
+            }
+    
+            function displayGame() {
+                for (var i=0; i<7; i++) {
+                    document.getElementById("dateColumn").children[i+1].innerHTML = games[i].date;
+                    document.getElementById("mapColumn").children[i+1].innerHTML = games[i].map;
+                    document.getElementById("rankColumn").children[i+1].innerHTML = games[i].rank;
+                    document.getElementById("rrChangeColumn").children[i+1].innerHTML = games[i].rrchange;
+                    document.getElementById("scoreColumn").children[i+1].innerHTML = games[i].score;
+                    document.getElementById("killsColumn").children[i+1].innerHTML = games[i].kills;
+                    document.getElementById("deathsColumn").children[i+1].innerHTML = games[i].deaths;
+                    localStorage.setItem(date, map, rank, rrchange, score, kills);
+                }
+            }
+            
+
+            var HTML = "inputinformation.html";
+            localStorage.setItem("content", HTML);
+        </script>
+
+
+
+        </script>
+</body>
+</html>
